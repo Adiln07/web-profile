@@ -1,5 +1,6 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Accordion } from "./Accordion";
 
 export function WorkExperiences() {
   return (
@@ -28,6 +29,7 @@ export function WorkExperiences() {
           </button>
         </div>
       </div>
+      <Accordion />
     </div>
   );
 }

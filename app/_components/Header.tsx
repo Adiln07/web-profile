@@ -40,7 +40,7 @@ export function Header() {
       <ul
         className={`
         lg:hidden bg-[#f8f8f8] absolute w-full h-fit z-50 duration-500 ${
-          open ? "left-0" : "left-[-100%]"
+          open ? "left-0" : "-left-full"
         }
       `}
       >
