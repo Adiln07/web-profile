@@ -70,19 +70,31 @@ export function AccordionItem({
             <p className="text-[#7b7b7b] xl:text-base lg:text-sm text-xs text-justify mt-3 md:mt-0">
               {item.description}
             </p>
-            <Link
-              href={item.url}
-              target="_blank"
-              className="flex items-center gap-2 cursor-pointer w-fit bg-[#222222] border border-[#222222] px-2 py-0.5 rounded-full  text-white mt-5"
-            >
-              <span className="font-medium lg:text-base text-xs ">
-                Go Website
-              </span>
-              <FontAwesomeIcon
-                icon={faArrowUpRightFromSquare}
-                className="lg:text-sm text-xs "
-              />
-            </Link>
+            {item.url ? (
+              <Link
+                href={item.url}
+                target="_blank"
+                className="flex items-center gap-2 cursor-pointer w-fit bg-[#222222] border border-[#222222] px-2 py-0.5 rounded-full  text-white mt-5  "
+              >
+                <span className="font-medium lg:text-base text-xs ">
+                  Go Website
+                </span>
+                <FontAwesomeIcon
+                  icon={faArrowUpRightFromSquare}
+                  className="lg:text-sm text-xs "
+                />
+              </Link>
+            ) : (
+              <div className="flex items-center gap-2 cursor-not-allowed w-fit bg-[#f8f8f8] border border-[#D0D0D2] px-2 py-0.5 rounded-full  text-[#7b7b7b] mt-5  ">
+                <span className="font-medium lg:text-base text-xs ">
+                  Go Website
+                </span>
+                <FontAwesomeIcon
+                  icon={faArrowUpRightFromSquare}
+                  className="lg:text-sm text-xs "
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

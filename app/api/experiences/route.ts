@@ -66,7 +66,7 @@ export async function GET() {
       image: "/images/portfolio/rsmata.png",
       description:
         "Work as a fullstack developer for a 360° room tour website at Rumah Sakit Mata Makassar that allow users to explore rooms across multiple floors. Create interactive and dynamic user interface using NextJS and integrate 360° view using Marzipano. Build backend services using Go Programming Language and provide RESTful API for managing floors, rooms, and hotspots data. Develop admin dashboard with authentication and implement CRUD features for managing all room tour data.",
-      url: "",
+      url: "https://sso.rsmatamakassar.co.id/roomtour",
     },
   ]);
 }
