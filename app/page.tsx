@@ -1,3 +1,4 @@
+import AboutMe from "./_components/AboutMe";
 import { Certificates } from "./_components/Certificates";
 import { Header } from "./_components/Header";
 import { HeroMain } from "./_components/HeroMain";
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroMain />
       <WorkExperiences />
       <Certificates />
+      <AboutMe />
     </div>
   );
 }

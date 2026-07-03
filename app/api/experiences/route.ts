@@ -60,7 +60,7 @@ export async function GET() {
     {
       id: 6,
       title: "RS Mata Makassar Kementrian Kesehatan",
-      date: "Dec 2025 - Present",
+      date: "Dec 2025 - Jun 2026",
       position: "Full-Stack Developer, Internship",
       techStack: ["Next js", "Go Language"],
       image: "/images/portfolio/rsmata.png",

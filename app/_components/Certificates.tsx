@@ -25,7 +25,7 @@ export function Certificates() {
   const currentPost = data.slice(firstPostIndex, lastPostIndex);
 
   return (
-    <div className="w-full h-full bg-[#f8f8f8]">
+    <div id="certificates" className="w-full h-full bg-[#f8f8f8]">
       <div className=" xl:max-w-[75em] lg:max-w-[55em] md:max-w-[45em]   m-auto">
         <p className="kanit-font text-center font-bold text-5xl py-10">
           Certificate

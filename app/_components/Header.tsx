@@ -14,9 +14,9 @@ export function Header() {
       <div className="bg-[#F8F8F8] h-[5em] md:flex items-center justify-center gap-15 hidden ">
         <div className="kanit-font font-semibold flex gap-10 text-lg">
           <Link href="/">Home</Link>
-          <Link href="/">My Experience </Link>
-          <Link href="/">Certificate</Link>
-          <Link href="/">About Me</Link>
+          <Link href="#my-experience">My Experience </Link>
+          <Link href="#certificates">Certificate</Link>
+          <Link href="#about-me">About Me</Link>
         </div>
         <div className="w-[2.5em] h-[2.5em] rounded-full bg-white shadow-xl overflow-hidden">
           <Image

@@ -4,7 +4,7 @@ import { Accordion } from "./Accordion";
 
 export function WorkExperiences() {
   return (
-    <div className="w-full h-full ">
+    <div id="my-experience" className="w-full h-full ">
       <div className="flex md:justify-between flex-col md:flex-row justify-center  m-auto xl:max-w-[75em] lg:max-w-[55em] md:max-w-[45em] md:my-14 my-8">
         <div className="kanit-font font-semibold text-[#222222] md:w-2/3 w-full">
           <p className="lg:text-[2.5em] md:text-[2em] text-center md:text-left text-[2.5em]">
