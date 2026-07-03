@@ -55,7 +55,7 @@ export function Header() {
         <li>
           <Link
             className=" bg-[#F8F8F8] py-7 px-3 inline-block  font-bold text-black"
-            href="/"
+            href="#my-experience"
           >
             My Experience
           </Link>
@@ -63,7 +63,7 @@ export function Header() {
         <li>
           <Link
             className=" bg-[#F8F8F8] py-7 px-3 inline-block  font-bold text-black"
-            href="/"
+            href="#certificates"
           >
             Certificate
           </Link>
@@ -71,7 +71,7 @@ export function Header() {
         <li>
           <Link
             className=" bg-[#F8F8F8] py-7 px-3 inline-block  font-bold text-black"
-            href="/"
+            href="#about-me"
           >
             About me
           </Link>
