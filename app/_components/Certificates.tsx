@@ -1,50 +1,61 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card } from "./Card";
+import { Card, type CertificateItem } from "./Card";
 import { Pagination } from "./Pagination";
 
 export function Certificates() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<CertificateItem[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(6);
+  const postsPerPage = 6;
 
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch("/api/certificates");
-      const result = await res.json();
+      try {
+        const res = await fetch("/api/certificates");
+        const result = await res.json();
 
-      setData(result);
+        setData(result);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     getData();
   }, []);
 
-  const lastPostIndex = currentPage * postPerPage;
-  const firstPostIndex = lastPostIndex - postPerPage;
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPost = data.slice(firstPostIndex, lastPostIndex);
 
   return (
-    <div id="certificates" className="w-full h-full bg-[#f8f8f8]">
-      <div className=" xl:max-w-[75em] lg:max-w-[55em] md:max-w-[45em]   m-auto">
-        <p className="kanit-font text-center font-bold text-5xl py-10">
-          Certificate
-        </p>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-y-5  pb-10 lg:w-[55em] m-auto ">
-          {/* card */}
-          {currentPost.map((item: any) => (
-            <Card item={item} />
+    <section
+      id="certificates"
+      className="w-full bg-[#f8f8f8] text-[#222222] py-16 md:py-24"
+    >
+      <div className="xl:max-w-[75em] lg:max-w-[55em] md:max-w-[45em] mx-auto px-6 md:px-8">
+        <div className="text-center mb-12">
+          <h2 className="kanit-font font-bold text-4xl md:text-5xl tracking-tight text-[#222222]">
+            Certificates
+          </h2>
+          <p className="roboto-font text-sm md:text-base text-[#7b7b7b] mt-2">
+            Selected certifications and internship credentials
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
+          {currentPost.map((item) => (
+            <Card key={item.id} item={item} />
           ))}
         </div>
-        <div>
-          <Pagination
-            totalPost={data.length}
-            postsPerPage={postPerPage}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
-        </div>
+
+        <Pagination
+          totalPost={data.length}
+          postsPerPage={postsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
-    </div>
+    </section>
   );
 }

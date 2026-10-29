@@ -4,39 +4,50 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-export function Card({ item }: { item: any }) {
+
+export interface CertificateItem {
+  id: number;
+  title: string;
+  company: string;
+  logo: string;
+  certificate: string;
+  isRounded: boolean;
+}
+
+export function Card({ item }: { item: CertificateItem }) {
   return (
-    <div>
-      <div className="bg-white w-[17em] m-auto rounded-xl shadow-xl h-[15em]">
-        <div className="py-5 pl-5 text-[#222222] flex flex-col justify-center gap-y-4 ">
-          <div className="h-[4.5em] w-[4.5em] object-cover">
-            <Image
-              src={item.logo}
-              alt="Logo"
-              width={500}
-              height={500}
-              className={`w-full h-full object-cover ${item.isRounded ? "rounded-full" : ""}`}
-              loading="lazy"
-            />
-          </div>
-          <div className="">
-            <p className="kanit-font font-semibold tex-xl h-[3em]">
-              {item.title}{" "}
-            </p>
-            <p className="roboto-font font-medium font-lg">{item.company} </p>
-          </div>
-          <div className="flex items-center gap-2 border w-fit px-2 py-.5 bg-[#222222]/10 rounded-full border-[#222222]">
-            <Link
-              href={item.certificate}
-              target="_blank"
-              className="roboto-font font-medium "
-            >
-              View Certificate
-            </Link>
-            <FontAwesomeIcon icon={faLink} />
-          </div>
+    <div className="bg-white w-full rounded-2xl border border-[#e8e8e8] shadow-sm hover:shadow-md transition-all duration-200 p-6 flex flex-col justify-between min-h-[15.5em] text-[#222222]">
+      <div>
+        <div className="h-14 w-14 mb-4">
+          <Image
+            src={item.logo}
+            alt={item.company}
+            width={200}
+            height={200}
+            className={`w-full h-full object-contain ${
+              item.isRounded ? "rounded-full object-cover" : ""
+            }`}
+            loading="lazy"
+          />
         </div>
+
+        <h3 className="kanit-font font-semibold text-lg leading-snug text-[#222222] line-clamp-2 min-h-[2.75em]">
+          {item.title}
+        </h3>
+        <p className="roboto-font font-normal text-sm text-[#7b7b7b] mt-1">
+          {item.company}
+        </p>
       </div>
+
+      <Link
+        href={item.certificate}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 border w-fit px-3.5 py-1.5 mt-5 bg-[#222222]/5 hover:bg-[#222222] text-[#222222] hover:text-white rounded-full border-[#222222] transition-colors duration-200 roboto-font text-xs font-medium"
+      >
+        <span>View Certificate</span>
+        <FontAwesomeIcon icon={faLink} className="text-[11px]" />
+      </Link>
     </div>
   );
 }

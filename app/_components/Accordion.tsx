@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AccordionItem } from "./AccordionItem";
+import { AccordionItem, type ExperienceItem } from "./AccordionItem";
 
 export function Accordion() {
-  const [activeId, setActiveId] = useState<number | null>(null);
-  const [data, setData] = useState([]);
+  const [activeId, setActiveId] = useState<number | null>(1);
+  const [data, setData] = useState<ExperienceItem[]>([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -23,8 +23,8 @@ export function Accordion() {
   }, []);
 
   return (
-    <div className=" w-full h-full">
-      {data.map((item: any) => (
+    <div className="w-full h-full border-t-2 border-[#D0D0D2] xl:max-w-[75em] lg:max-w-[55em] md:max-w-[45em] mx-auto px-6 md:px-8">
+      {data.map((item) => (
         <AccordionItem
           key={item.id}
           item={item}

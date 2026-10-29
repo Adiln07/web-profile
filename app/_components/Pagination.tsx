@@ -11,26 +11,27 @@ export function Pagination({
   currentPage: number;
   setCurrentPage: (page: number) => void;
 }) {
-  let pages: number[] = [];
+  const totalPages = Math.ceil(totalPost / postsPerPage);
+  const pages: number[] = [];
 
-  for (let i = 1; i <= Math.ceil(totalPost / postsPerPage); i++) {
+  for (let i = 1; i <= totalPages; i++) {
     pages.push(i);
   }
 
+  if (totalPages <= 1) return null;
+
   return (
-    <div className="pb-10">
-      <div className=" flex justify-center gap-4">
-        {pages.map((page, index) => (
+    <div className="pt-2">
+      <div className="flex justify-center gap-3">
+        {pages.map((page) => (
           <button
-            key={index}
-            className={`
-        h-10 w-10 rounded-xl text-sm font-semibold transition-all duration-200
-        ${
-          currentPage === page
-            ? "bg-slate-900 text-white shadow-md"
-            : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 hover:shadow-md cursor-pointer"
-        }
-      `}
+            key={page}
+            type="button"
+            className={`h-10 w-10 rounded-xl text-sm roboto-font font-semibold transition-all duration-200 ${
+              currentPage === page
+                ? "bg-[#222222] text-white shadow-sm"
+                : "bg-white text-[#222222] border border-[#d0d0d0] hover:bg-[#eaeaea] cursor-pointer"
+            }`}
             onClick={() => setCurrentPage(page)}
           >
             {page}

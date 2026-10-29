@@ -4,7 +4,7 @@ export async function GET() {
   return NextResponse.json([
     {
       id: 1,
-      title: "Belajar Dasar Artificial intelligence",
+      title: "Belajar Dasar Artificial Intelligence",
       company: "Dicoding Indonesia",
       logo: "/images/logo/dicoding.jpg",
       certificate:
@@ -50,7 +50,7 @@ export async function GET() {
     {
       id: 6,
       title: "CyberOps Associate Learning from Cisco",
-      company: "Cisco Academy Networking",
+      company: "Cisco Networking Academy",
       logo: "/images/logo/cisco.png",
       certificate:
         "https://drive.google.com/file/d/1ubRYXthWKJU1oI4KQ2MXxUml7ntmEY0V/view?usp=sharing",
@@ -59,7 +59,7 @@ export async function GET() {
     {
       id: 7,
       title: "Partner: PCAP - Programming Essentials in Python",
-      company: "Cisco Academy Networking",
+      company: "Cisco Networking Academy",
       logo: "/images/logo/cisco.png",
       certificate:
         "https://drive.google.com/file/d/1OFVMlD8SnZbF3dGbDe2esL-jw_qyYGva/view?usp=sharing",
@@ -68,7 +68,7 @@ export async function GET() {
     {
       id: 8,
       title: "Sertifikat Magang RS Mata Makassar Programmer",
-      company: "Kementrian Kesehatan",
+      company: "Kementerian Kesehatan",
       logo: "/images/logo/kemenkes2.png",
       certificate:
         "https://drive.google.com/file/d/1qEzyM29-4F1sPS8TxXqLXl9fVlUwqBbY/view?usp=sharing",
